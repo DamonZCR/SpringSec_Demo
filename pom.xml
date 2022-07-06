@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.SpringSec.damo</groupId>
+    <artifactId>SpringSec_Deno</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <!--springBoot_security_demo项目所需要的SpringBoot必备父项目依赖，SpringMVC项目不需要-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.3.RELEASE</version>
+    </parent>
+
+    <modules>
+        <module>springmvc_session</module>
+        <module>springsecurity_demo</module>
+        <module>springboot_security_demo1</module>
+        <module>springboot_security_demo3</module>
+        <module>springboot_security_demo4</module>
+    </modules>
+    <name>SpringSec_Deno</name>
+
+    <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <junit.version>5.7.1</junit.version>
+    </properties>
+</project>
