@@ -1,5 +1,6 @@
 package com.damon.security.springboot.config;
 
+import com.damon.security.springboot.LoginFailureHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -15,6 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    private LoginFailureHandler loginFailureHandler;
     /** 定义用户信息服务（查询用户信息）
      * 	UserDetailsService是用来查询用户信息的类，可以使用默认，也可以自定义这个类；
      * 我们在上个SpringMVC项目中自己实现查询，而SpringSecurity替我们实现了这个查询，
@@ -59,7 +61,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/login-view")
                 .loginProcessingUrl("/login")//当在登录页面点击登录，数据就会传送到后台的login控制器，所也需要在这里配置
                 .successForwardUrl("/login-success")//自定义登录成功的页面地址。允许表单登录后的返回页面
-                .failureUrl("/login-view?error=0")
+                //.failureUrl("/login-view?error=0")
+                .failureHandler(loginFailureHandler)
             .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)

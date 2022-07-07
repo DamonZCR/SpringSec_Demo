@@ -27,6 +27,8 @@
 
 这个项目只是简单的实现了使用SpringBoot进行认证和授权，没有实现会话+数据库连接。
 
-这个项目的目的就是为了体现SpringBoot集成Spring Security相对 SpringMVC要简单的多，因为需要注解 或者 扫描 注入都不需要表示；
+这个项目的目的就是为了体现SpringBoot集成Spring Security相对 SpringMVC要简单的多，SpringMVC需要注解 或者 扫描 注入,在SpringBoot中这些都不需要表示，只需要写一个和springmvc.xml相关的文件用于重定向登录。
+
+这里的登录使用的还是SpringSecurity的登录界面，没有使用到本地的前端文件；
 
 对这个项目的增强就是 **springboot_security_demo3** 这个项目；

@@ -22,6 +22,7 @@
         <module>springboot_security_demo1</module>
         <module>springboot_security_demo3</module>
         <module>springboot_security_demo4</module>
+        <module>springboot_security_demo5</module>
     </modules>
     <name>SpringSec_Deno</name>
 

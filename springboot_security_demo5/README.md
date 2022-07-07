@@ -1,3 +1,7 @@
+---
+typora-root-url: ./
+---
+
 注：因为所有的SpringBoot项目都需要添加一个父项目依赖：
 
 ```java
@@ -39,7 +43,7 @@
 
   ​     在安全配置类中，http配置中添加一个.failureUrl("/login-view?error=0")函数，当后端对用户输入的账号或者密码匹配错误时，就会自动使用这个函数返回登录界面并且带上参数error；这个函数必须跟在登录等操作函数的后边才可以：
 
-  ![image-20220706163511716](img/README/image-20220706163511716.png)
+  <img src="img/README/image-20220706163511716.png" alt="image-20220706163511716" style="zoom:50%;" />
 
   ​     这个项目（springboot_security_demo4）使用的直接URL处理登录错误，后一个项目springboot_security_demo5使用了登录错误处理类Hander来处理，更具有拓展性；
 
@@ -47,4 +51,4 @@
 
   - 用户输入的账号不存在将报出异常不能解决，抛出异常是因为使用用户输入的用户名去数据库中查询，查询不到返回了空的用户实体，于是又将这个空的实体当作userDetails给Spring Security返回了过去，将异常处理的过程交给了它来处理，其他可以使用捕获异常来解决；
 
-![image-20220706164319884](img/README/image-20220706164319884.png)
+<img src="img/README/image-20220706164319884.png" alt="image-20220706164319884" style="zoom:50%;" />
