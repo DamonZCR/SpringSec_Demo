@@ -7,8 +7,6 @@
 |  3   | springboot_security_demo1 | SpringBoot |       SpringSecurity        |   无   |
 |  4   | springboot_security_demo3 | SpringBoot |       SpringSecurity        |   有   |
 |  5   | springboot_security_demo4 | SpringBoot |       SpringSecurity        |   有   |
-|  6   |                           |            |                             |        |
-|  7   |                           |            |                             |        |
 
 - 第一个项目，只是测试使用SpringMVC通过Session实现认证和授权的，目前基于这种的授权已经很少使用，都是使用安全框架来实现，所以这个就是入门。
 - 第二个项目，使用SpringMVC集成了Spring Security，进行用户登录的认证和授权，没有实现保持会话的功能，登录界面和退出登录都是使用Spring Security自带的界面。使用基于内存的查询方式；

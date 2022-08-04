@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
  * @author Administrator
  * @version 1.0
  **/
-@Configuration //相当于applicationContext.xml
+@Configuration //相当于application-Context.xml
 @ComponentScan(basePackages = "com.damon.security.springmvc"
             ,excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION,value = Controller.class)})
 public class ApplicationConfig {

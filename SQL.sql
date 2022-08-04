@@ -41,8 +41,8 @@ CREATE TABLE `oauth_client_details` (
 /*Data for the table `oauth_client_details` */
 
 insert  into `oauth_client_details`(`client_id`,`resource_ids`,`client_secret`,`scope`,`authorized_grant_types`,`web_server_redirect_uri`,`authorities`,`access_token_validity`,`refresh_token_validity`,`additional_information`,`create_time`,`archived`,`trusted`,`autoapprove`) values 
-('c1','res1','$2a$10$Dappn49nM8ZjkCO3ASwR/evnHQN3iPH4npP45js0d9Ug3Vm4ui.sq','ROLE_ADMIN,ROLE_USER,ROLE_API','authorization_code,password,client_credentials,implicit,refresh_token','https://www.baidu.com',NULL,7200,259200,NULL,'2020-12-13 15:53:10',0,0,'false'),
-('c2','res2','secret','ROLE_API','authorization_code,password,client_credentials,implicit,refresh_token','https://www.baidu.com',NULL,7200,259200,NULL,'2020-12-13 15:53:10',0,0,'false');
+('c1','res1','$2a$10$1JcdvafOMMn0tMl8jodDKeVds9ZoGp5DwBmUG90dASjuTWHf23upy','ROLE_ADMIN,ROLE_USER,ROLE_API','authorization_code,password,client_credentials,implicit,refresh_token','https://www.baidu.com',NULL,7200,259200,NULL,'2020-12-13 15:53:10',0,0,'false'),
+('c2','res2','$2a$10$d662Soreq/k3yBhGLnR3c.l2Y53QiYEfrlF4B9l15bclD.nmZnpcC','ROLE_API','authorization_code,password,client_credentials,implicit,refresh_token','https://www.baidu.com',NULL,7200,259200,NULL,'2020-12-13 15:53:10',0,0,'false');
 
 /*Table structure for table `oauth_code` */
 
@@ -76,7 +76,7 @@ CREATE TABLE `t_permission` (
 insert  into `t_permission`(`id`,`code`,`description`,`url`) values 
 ('1','p1','测试资源1','/r/r1'),
 ('2','p2','测试资源2','/r/r2'),
-('3','p3','测试资源2','/r/r2');
+('3','p3','测试资源2','/r/r3');
 
 /*Table structure for table `t_role` */
 
@@ -96,7 +96,8 @@ CREATE TABLE `t_role` (
 /*Data for the table `t_role` */
 
 insert  into `t_role`(`id`,`role_name`,`description`,`create_time`,`update_time`,`status`) values 
-('1','管理员',NULL,'2020-11-14 15:16:22','2020-11-14 15:16:22',NULL);
+('1','管理员',NULL,'2020-11-14 15:16:22','2020-11-14 15:16:22',NULL),
+('2','次管理员',NULL,'2022-07-04 11:45:05','2022-07-04 11:45:05',NULL);
 
 /*Table structure for table `t_role_permission` */
 
@@ -111,7 +112,8 @@ CREATE TABLE `t_role_permission` (
 
 insert  into `t_role_permission`(`role_id`,`permission_id`) values 
 ('1','1'),
-('1','3');
+('1','3'),
+('2','2');
 
 /*Table structure for table `t_user` */
 
@@ -131,7 +133,7 @@ CREATE TABLE `t_user` (
 
 insert  into `t_user`(`id`,`username`,`password`,`fullname`,`mobile`) values 
 (1,'zhangsan','$2a$10$StU1Llgco9LnLZ0htCSXp.c1FZVeMwGk/CsrgpYDKEAc19RFhkinS','张三',NULL),
-(2,'lisi','456','李四',NULL);
+(2,'lisi','$2a$10$.4.gJWN9MOHpuqC6mz7bKOvr0hcw13NLO7xzWKG60HlTJ9SqybNx.','李四',NULL);
 
 /*Table structure for table `t_user_role` */
 
@@ -148,7 +150,8 @@ CREATE TABLE `t_user_role` (
 /*Data for the table `t_user_role` */
 
 insert  into `t_user_role`(`user_id`,`role_id`,`create_time`,`creator`) values 
-('1','1','2020-11-14 15:12:21',NULL);
+('1','1','2020-11-14 15:12:21',NULL),
+('2','2','2022-07-04 11:45:25',NULL);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

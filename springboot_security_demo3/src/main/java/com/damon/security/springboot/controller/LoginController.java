@@ -33,6 +33,7 @@ public class LoginController {
     public String r2(){
         return " 访问资源r2   ( •̀ .̫ •́ )✧";
     }
+
     @GetMapping(value = "/w/w1",produces = {"text/plain;charset=UTF-8"})
     public String w1(){
         return " 访问无需授权的资源  ヾ(•ω•`)o";

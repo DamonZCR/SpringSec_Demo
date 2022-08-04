@@ -30,14 +30,17 @@ public class SpringDataUserDetailsService implements UserDetailsService {
     //根据 账号查询用户信息
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserDetails userDetails;
+        UserDetails userDetails;//可以尝试实现这个类，进行加强；
         //登录账号
         UserDto userDto = userDao.getUserByUsername(username);
         if (userDto == null){
             // 如果没找到这个用户就返回空，为什么不是直接抛异常呢？
             // 因为根据流程图我们这里只负责将结果返回给DaoAuthenticationProvider，后期的处理包括异常都是它处理；
-            throw new BadCredentialsException("用户名不存在");
             //return null;此处可以返回一个空的UserDetails让SpringSecurity去解决，会输出异常！
+
+            // 尝试解决如果为空抛出异常的问题
+            //throw new BadCredentialsException("用户名不存在");//解决方法一：这个异常还是不够详细
+            throw new UsernameNotFoundException("没有该用户");//解决方法二：当用户输入错误的用户名或者密码不会有一场，会前端显示错误
         }
         //根据用户的id查询用户的权限
         List<String> permissions = userDao.findPermissionsByUserId(userDto.getId());

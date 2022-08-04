@@ -1,6 +1,5 @@
 package com.damon.security.springboot.config;
 
-import com.damon.security.springboot.LoginFailureHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

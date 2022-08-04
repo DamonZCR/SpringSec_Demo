@@ -24,7 +24,7 @@ public class LoginController {
     @RequestMapping(value = "/login",produces = "text/plain;charset=utf-8")
     public String login(AuthenticationRequest authenticationRequest, HttpSession session){
         UserDto userDto = authenticationService.authentication(authenticationRequest);
-        //存入session,注意：此处设置的key相同，就会导致第一个用户登录后，第二个用户登录覆盖调用第一用户登录保存的session信息；
+        //存入session,注意：此处设置的key相同，就会导致在一个浏览器中第一个用户登录后，第二个用户登录覆盖调用第一用户登录保存的session信息；
         session.setAttribute(UserDto.SESSION_USER_KEY,userDto);
         return userDto.getUsername() +"登录成功";
     }
@@ -46,7 +46,7 @@ public class LoginController {
             UserDto userDto = (UserDto) object;
             fullname = userDto.getFullname();
         }
-        return fullname+"访问资源r1 ( •̀ .̫ •́ )✧";
+        return fullname + "访问资源r1 ( •̀ .̫ •́ )✧";
     }
     @GetMapping(value = "/r/r2",produces = {"text/plain;charset=UTF-8"})
     public String r2(HttpSession session){

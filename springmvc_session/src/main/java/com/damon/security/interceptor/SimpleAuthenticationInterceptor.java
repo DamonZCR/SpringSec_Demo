@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 
 /**
  * SpringMVC提供了一个拦截器接口HandlerInterceptor，我们可以实现这个接口；
+ * 实现用户访问此项目的头一道关卡；如果用户未登录也将提示用户登录；
  * @author Administrator
  * @version 1.0
  **/

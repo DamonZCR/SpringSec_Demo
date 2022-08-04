@@ -1,4 +1,4 @@
-package com.damon.security.springboot;
+package com.damon.security.springboot.config;
 
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 

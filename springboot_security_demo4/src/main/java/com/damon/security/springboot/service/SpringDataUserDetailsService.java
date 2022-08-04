@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -45,10 +46,7 @@ public class SpringDataUserDetailsService implements UserDetailsService {
         String[] permissionArray = new String[permissions.size()];
         permissions.toArray(permissionArray);
 
-        System.out.print("用户 " + username + " 拥有的权限包括: ");
-        for (int i = 0; i < permissionArray.length; i++) {
-            System.out.print(permissionArray[i] +"  ");
-        }
+        System.out.println("\n用户 " + username + " 拥有的权限包括: " + Arrays.toString(permissionArray));
         System.out.println();
 
         // 将用户信息配置到UserDetails中
